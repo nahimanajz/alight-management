@@ -1,0 +1,243 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "doe",
+      "email": "test@example.com",
+      "password": "password",
+      "isVerified": true
+    },
+    {
+      "id": "2",
+      "firstName": "John",
+      "lastName": "smith",
+      "email": "johnsmith@example.com",
+      "password": "password",
+      "isVerified": false
+    },
+    {
+      "id": "3",
+      "firstName": "Samantha",
+      "lastName": "Alexander",
+      "email": "alexandersamantha@example.com",
+      "password": "password",
+      "isVerified": true
+    },
+    {
+      "id": "1a35",
+      "firstName": "janvier",
+      "lastName": "nahimana",
+      "email": "jazzo@gmail.com",
+      "password": "Karama@2019"
+    },
+    {
+      "id": "df0d",
+      "firstName": "janvier",
+      "lastName": "nahimana",
+      "email": "jazzo@gmail.com",
+      "password": "Karama@2019"
+    },
+    {
+      "id": "7702",
+      "firstName": "john",
+      "lastName": "doe",
+      "email": "johndoe@example.com",
+      "password": "Karama@2019"
+    },
+    {
+      "id": "4ad9",
+      "firstName": "john",
+      "lastName": "doe",
+      "email": "johndoe@example.com",
+      "password": "Karama@2019"
+    },
+    {
+      "id": "8977",
+      "firstName": "john",
+      "lastName": "doe",
+      "email": "johndoe@example.com",
+      "password": "Karama@2019"
+    },
+    {
+      "id": "7288",
+      "firstName": "john",
+      "lastName": "doe",
+      "email": "johndoe@example.com",
+      "password": "Karama@2019"
+    },
+    {
+      "id": "21a4",
+      "firstName": "john",
+      "lastName": "doe",
+      "email": "johndoe@example.com",
+      "password": "Karama@2019"
+    },
+    {
+      "id": "d3a4",
+      "firstName": "john",
+      "lastName": "doe",
+      "email": "johndoe@example.com",
+      "password": "Karama@2019"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Jz",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "city": "New York",
+      "password": "<Null>",
+      "qualification": "Software Engineering",
+      "job_preferences": "Programming",
+      "id": "2133"
+    },
+    {
+      "name": "Jz",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "city": "New York",
+      "password": "<Null>",
+      "qualification": "Software Engineering",
+      "job_preferences": "Programming",
+      "id": "5214"
+    },
+    {
+      "name": "Jz",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "city": "New York",
+      "password": "<Null>",
+      "qualification": "Software Engineering",
+      "job_preferences": "Programming",
+      "id": "f091"
+    },
+    {
+      "name": "Jz",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "city": "New York",
+      "password": "<Null>",
+      "qualification": "Software Engineering",
+      "job_preferences": "Programming",
+      "id": "c59c"
+    },
+    {
+      "name": "Jz",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "city": "New York",
+      "password": "<Null>",
+      "qualification": "Software Engineering",
+      "job_preferences": "Programming",
+      "id": "7a62"
+    },
+    {
+      "name": "Jz",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "city": "New York",
+      "password": "<Null>",
+      "qualification": "Software Engineering",
+      "job_preferences": "Programming",
+      "id": "ae90"
+    },
+    {
+      "name": "Jz",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "city": "New York",
+      "password": "<Null>",
+      "qualification": "Software Engineering",
+      "job_preferences": "Programming",
+      "id": "f77b"
+    },
+    {
+      "name": "Jz",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "city": "New York",
+      "password": "<Null>",
+      "qualification": "Software Engineering",
+      "job_preferences": "Programming",
+      "id": "d71d"
+    },
+    {
+      "name": "Jz",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "city": "New York",
+      "password": "<Null>",
+      "qualification": "Software Engineering",
+      "job_preferences": "Programming",
+      "id": "e9e3"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "1",
+      "role": "Software Engineer",
+      "description": "You will be performing one of the following tasks for and we us a company to work with you",
+      "requirements": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit excepturi velit corrupti quasi, nobis, iusto maiores aut incidunt nisi voluptas eligendi dolore ratione!            ",
+      "responsibilities": " - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda! - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda!"
+    },
+    {
+      "id": "2",
+      "role": "Software Engineer",
+      "description": "You will be performing one of the following tasks for and we us a company to work with you",
+      "requirements": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit excepturi velit corrupti quasi, nobis, iusto maiores aut incidunt nisi voluptas eligendi dolore ratione!            ",
+      "responsibilities": " - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda! - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda!"
+    },
+    {
+      "id": "3",
+      "role": "Software Engineer",
+      "description": "You will be performing one of the following tasks for and we us a company to work with you",
+      "requirements": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit excepturi velit corrupti quasi, nobis, iusto maiores aut incidunt nisi voluptas eligendi dolore ratione!            ",
+      "responsibilities": " - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda! - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda!"
+    },
+    {
+      "id": "4",
+      "role": "Software Engineer",
+      "description": "You will be performing one of the following tasks for and we us a company to work with you",
+      "requirements": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit excepturi velit corrupti quasi, nobis, iusto maiores aut incidunt nisi voluptas eligendi dolore ratione!            ",
+      "responsibilities": " - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda! - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda!"
+    },
+    {
+      "id": "5",
+      "role": "Software Engineer",
+      "description": "You will be performing one of the following tasks for and we us a company to work with you",
+      "requirements": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit excepturi velit corrupti quasi, nobis, iusto maiores aut incidunt nisi voluptas eligendi dolore ratione!            ",
+      "responsibilities": " - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda! - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda!"
+    },
+    {
+      "id": "6",
+      "role": "Software Engineer",
+      "description": "You will be performing one of the following tasks for and we us a company to work with you",
+      "requirements": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit excepturi velit corrupti quasi, nobis, iusto maiores aut incidunt nisi voluptas eligendi dolore ratione!            ",
+      "responsibilities": " - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda! - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda!"
+    },
+    {
+      "id": "7",
+      "role": "Software Engineer",
+      "description": "You will be performing one of the following tasks for and we us a company to work with you",
+      "requirements": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit excepturi velit corrupti quasi, nobis, iusto maiores aut incidunt nisi voluptas eligendi dolore ratione!            ",
+      "responsibilities": " - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda! - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda!"
+    },
+    {
+      "id": "8",
+      "role": "Software Engineer",
+      "description": "You will be performing one of the following tasks for and we us a company to work with you",
+      "requirements": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit excepturi velit corrupti quasi, nobis, iusto maiores aut incidunt nisi voluptas eligendi dolore ratione!            ",
+      "responsibilities": " - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda! - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda!"
+    }
+  ]
+}
