@@ -2,17 +2,17 @@
 
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import Link from "next/link";
-import { getAll } from "../services/jobs";
+import { getAll } from "../services/candidate";
 import { useEffect, useState } from "react";
-import JobTable from "@/components/Tables/Jobs";
-import { Job } from "@/types/custom/job";
+import CandidatesTable from "@/components/Tables/Candidates";
+import { Candidate } from "@/types/custom/candidate";
 import ActionLink from "@/components/common/ActionLink";
 
 export const Page = () => {
-  const [jobs, setJobs] = useState<Job[]>();
+  const [candidates, setCandidates] = useState<Candidate[]>();
   const getData = async () => {
     const data = await getAll();
-    setJobs(data);
+    setCandidates(data);
   };
   useEffect(() => {
     getData();
@@ -21,11 +21,12 @@ export const Page = () => {
     <DefaultLayout>
       <div className="flex justify-between py-6">
         <h2 className="text-title-md2 font-semibold text-black dark:text-white">
-          Jobs
+          Candidates
         </h2>
-        <ActionLink targetPage={"/jobs/addNew"} label={"Add New"} />
+
+        <ActionLink targetPage={"/candidates/addNew"} label={"Add New"} />
       </div>
-      <JobTable data={jobs} />
+      <CandidatesTable data={candidates} />
     </DefaultLayout>
   );
 };

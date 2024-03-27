@@ -91,17 +91,6 @@
       "password": "<Null>",
       "qualification": "Software Engineering",
       "job_preferences": "Programming",
-      "id": "2133"
-    },
-    {
-      "name": "Jz",
-      "email": "test@example.com",
-      "phone": "1234567890",
-      "address": "123 Main St",
-      "city": "New York",
-      "password": "<Null>",
-      "qualification": "Software Engineering",
-      "job_preferences": "Programming",
       "id": "5214"
     },
     {
@@ -114,79 +103,13 @@
       "qualification": "Software Engineering",
       "job_preferences": "Programming",
       "id": "f091"
-    },
-    {
-      "name": "Jz",
-      "email": "test@example.com",
-      "phone": "1234567890",
-      "address": "123 Main St",
-      "city": "New York",
-      "password": "<Null>",
-      "qualification": "Software Engineering",
-      "job_preferences": "Programming",
-      "id": "c59c"
-    },
-    {
-      "name": "Jz",
-      "email": "test@example.com",
-      "phone": "1234567890",
-      "address": "123 Main St",
-      "city": "New York",
-      "password": "<Null>",
-      "qualification": "Software Engineering",
-      "job_preferences": "Programming",
-      "id": "7a62"
-    },
-    {
-      "name": "Jz",
-      "email": "test@example.com",
-      "phone": "1234567890",
-      "address": "123 Main St",
-      "city": "New York",
-      "password": "<Null>",
-      "qualification": "Software Engineering",
-      "job_preferences": "Programming",
-      "id": "ae90"
-    },
-    {
-      "name": "Jz",
-      "email": "test@example.com",
-      "phone": "1234567890",
-      "address": "123 Main St",
-      "city": "New York",
-      "password": "<Null>",
-      "qualification": "Software Engineering",
-      "job_preferences": "Programming",
-      "id": "f77b"
-    },
-    {
-      "name": "Jz",
-      "email": "test@example.com",
-      "phone": "1234567890",
-      "address": "123 Main St",
-      "city": "New York",
-      "password": "<Null>",
-      "qualification": "Software Engineering",
-      "job_preferences": "Programming",
-      "id": "d71d"
-    },
-    {
-      "name": "Jz",
-      "email": "test@example.com",
-      "phone": "1234567890",
-      "address": "123 Main St",
-      "city": "New York",
-      "password": "<Null>",
-      "qualification": "Software Engineering",
-      "job_preferences": "Programming",
-      "id": "e9e3"
     }
   ],
   "jobs": [
     {
       "id": "1",
-      "role": "Software Engineer",
-      "description": "You will be performing one of the following tasks for and we us a company to work with you",
+      "role": "Software Engineer12",
+      "description": "You will be121 performing one of the following tasks for and we us a company to work with you",
       "requirements": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit excepturi velit corrupti quasi, nobis, iusto maiores aut incidunt nisi voluptas eligendi dolore ratione!            ",
       "responsibilities": " - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda! - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime officia modi assumenda!"
     },
@@ -231,20 +154,6 @@
       "description": "lorem",
       "requirements": "lorem",
       "responsibilities": "lorem"
-    },
-    {
-      "id": "260c",
-      "role": "role",
-      "description": "sh",
-      "requirements": "sh",
-      "responsibilities": "sh"
-    },
-    {
-      "id": "60cd",
-      "role": "tehe tr",
-      "description": "chance",
-      "requirements": "validatio123",
-      "responsibilities": "it is done"
     }
   ]
 }

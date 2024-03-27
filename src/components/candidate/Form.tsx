@@ -2,42 +2,42 @@
 import TextArea from "@/components/FormElements/TextArea";
 import TextInput from "@/components/FormElements/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Job, JobSchema } from "@/types/custom/job";
-import { create, update } from "@/app/services/jobs";
+import { Candidate, CandidateSchema } from "@/types/custom/candidate";
+import { create, update } from "@/app/services/candidate";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
+import { useRouter } from"next/navigation"
 
 export default function Form({
   isEditing = false,
-  job,
+  candidate,
   title,
   message,
 }: {
   isEditing?: boolean;
-  job?: Job;
+  candidate?: Candidate;
   title: string;
   message: string;
 }) {
-  const router = useRouter();
+  const router = useRouter()
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(JobSchema),
-    defaultValues: job,
+    resolver: yupResolver(CandidateSchema),
+    defaultValues: candidate,
   });
-  const onSubmit: SubmitHandler<Job> = (data) => {
+  const onSubmit: SubmitHandler<Candidate> = (data) => {
     if (isEditing) {
-      update({ ...data, id: job?.id });
+      update({ ...data, id: candidate?.id });
     } else {
       create(data);
     }
     toast.info(message);
     setTimeout(() => {
-      router.push("/jobs");
+      router.push("/candidates")
     }, 1000);
   };
 
@@ -49,34 +49,53 @@ export default function Form({
       <div className="p-16">
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextInput
-            label={"Role"}
-            name={"role"}
+            label={"Full Names"}
+            name={"name"}
             register={register}
             errors={errors}
-            defaultValue={job?.role}
+            defaultValue={candidate?.name}
           />
-          <TextArea
-            label={"Description"}
-            name={"description"}
+          <TextInput
+            label={"Email"}
+            name={"email"}
             register={register}
             errors={errors}
-            defaultValue={job?.description}
+            defaultValue={candidate?.email}
           />
-
-          <TextArea
-            label={"Requirements"}
-            name={"requirements"}
+          <TextInput
+            label={"Phone"}
+            name={"phone"}
             register={register}
             errors={errors}
-            defaultValue={job?.requirements}
+            defaultValue={candidate?.phone}
           />
-
-          <TextArea
-            label={"Responsibilities"}
-            name={"responsibilities"}
+          <TextInput
+            label={"Address"}
+            name={"address"}
             register={register}
             errors={errors}
-            defaultValue={job?.responsibilities}
+            defaultValue={candidate?.address}
+          />
+          <TextInput
+            label={"City"}
+            name={"city"}
+            register={register}
+            errors={errors}
+            defaultValue={candidate?.city}
+          />
+          <TextInput
+            label={"Qualification"}
+            name={"qualification"}
+            register={register}
+            errors={errors}
+            defaultValue={candidate?.qualification}
+          />
+          <TextInput
+            label={"Job Preferences"}
+            name={"job_preferences"}
+            register={register}
+            errors={errors}
+            defaultValue={candidate?.job_preferences}
           />
 
           <div className="mb-5">

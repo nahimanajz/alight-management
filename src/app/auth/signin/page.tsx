@@ -9,11 +9,13 @@ import { UserLogin, UserLoginSchema } from "@/types/custom/user";
 import * as Icon from "@/components/icons";
 import { signin } from "@/app/services/auth";
 import { toast } from "react-toastify";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+
 
 const SignIn: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const togglePassword = () => setShowPassword(!showPassword);
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -24,9 +26,9 @@ const SignIn: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<UserLogin> = async (data) => {
-    
-    if (await signin(data)) {
-      redirect("/");
+    const user = await signin(data)
+    if (user) {
+        router.push("/")
     }
     toast.error("Invalid credentials");
   };

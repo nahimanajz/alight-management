@@ -1,10 +1,11 @@
-import ECommerce from "@/components/Dashboard/E-commerce";
+import Insights from "@/components/Dashboard/Page";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 export default function Home() {
+
   return (
     <DefaultLayout>
-      <ECommerce />
+      <Insights />
     </DefaultLayout>
   );
 }
