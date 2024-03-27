@@ -18,10 +18,11 @@ export const getAll = async ():Promise<Job[]> => {
   };
 
   export const deleteJob = async (job:Job):Promise<void> => {
+
+    console.log(job)
     const data  = await axios.delete(`${config()}/jobs/${job.id}`);
-    console.log(data)
   };
   
   export const update = async (job:Job):Promise<void> => {
-    const data  = await axios.put(`${config()}/jobs/${job.id}`, job);
+    const data  = await axios.patch(`${config()}/jobs/${job.id}`, job);
   };

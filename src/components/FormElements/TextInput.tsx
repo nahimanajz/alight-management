@@ -7,6 +7,7 @@ export type FieldProps = {
   svg?: React.ReactNode;
   register: Function;
   errors: any;
+  defaultValue?: any;
 };
 const TextInput = ({
   type,
@@ -16,6 +17,7 @@ const TextInput = ({
   svg,
   register,
   errors,
+  defaultValue,
 }: FieldProps) => {
    const  className = `w-full rounded-lg ${errors[name]?"border-rose-600": "border-stroke"} border  bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none `
   
@@ -31,6 +33,7 @@ const TextInput = ({
           {...register(name)}
           placeholder={placeholder ?? `Enter ${label}`}
           className={className}
+          defaultValue={defaultValue}
         />
 
         {svg ? <span className="absolute right-4 top-4">{svg}</span> : ""}

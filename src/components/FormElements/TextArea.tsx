@@ -9,6 +9,7 @@ const TextArea: FC<FieldProps> = ({
   placeholder,
   register,
   errors,
+  defaultValue
 }) => {
     const clx = `w-full ${errors[name]?"border-rose-600": "border-stroke"} rounded border-[1.5px]  bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary`
   return (
@@ -21,7 +22,10 @@ const TextArea: FC<FieldProps> = ({
         {...register(name)}
         placeholder={placeholder ?? `Please enter ${label}`}
         className={clx}
-      ></textarea>
+        defaultValue={defaultValue}
+      >
+      
+      </textarea>
       {errors[name] ? (
         <span className="text-sm text-orange-600">
           {" "}
