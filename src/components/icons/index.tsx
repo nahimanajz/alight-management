@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-interface IconProps  {
-    onClick?: VoidFunction;
+interface IconProps {
+  onClick?: VoidFunction;
 }
-export const PersonIcon: FC<IconProps> =  ({ onClick })  => (
+export const PersonIcon: FC<IconProps> = ({ onClick }) => (
   <svg
     className="fill-current"
     width="22"
@@ -24,9 +24,9 @@ export const PersonIcon: FC<IconProps> =  ({ onClick })  => (
       />
     </g>
   </svg>
-)
-export const EnvelopeIcon: FC<IconProps> =  ({ onClick })  => (
-    <svg
+);
+export const EnvelopeIcon: FC<IconProps> = ({ onClick }) => (
+  <svg
     className="fill-current"
     width="22"
     height="22"
@@ -42,9 +42,9 @@ export const EnvelopeIcon: FC<IconProps> =  ({ onClick })  => (
       />
     </g>
   </svg>
-  )
-  export const LockIcon: FC<IconProps> =  ({ onClick })  => (
-    <svg
+);
+export const LockIcon: FC<IconProps> = ({ onClick }) => (
+  <svg
     className="fill-current"
     width="22"
     height="22"
@@ -64,4 +64,54 @@ export const EnvelopeIcon: FC<IconProps> =  ({ onClick })  => (
       />
     </g>
   </svg>
-  )
+);
+
+export const TrashIcon: FC<IconProps> = ({ onClick }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="24"
+    height="24"
+    viewBox="0,0,256,256"
+    onClick={onClick}
+  >
+    <g
+      fill="#fa5252"
+      fill-rule="nonzero"
+      stroke="none"
+      stroke-width="1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-miterlimit="10"
+      stroke-dasharray=""
+      stroke-dashoffset="0"
+      font-family="none"
+      font-weight="none"
+      font-size="none"
+      text-anchor="none"
+    >
+      <g transform="scale(10.66667,10.66667)">
+        <path d="M10,2l-1,1h-6v2h18v-2h-6l-1,-1zM4.36523,7l1.70313,15h11.86328l1.70313,-15z"></path>
+      </g>
+    </g>
+  </svg>
+);
+
+export const PencilIcon: FC<IconProps> = ({ onClick }) => (
+  <svg
+    className="feather feather-edit-2"
+    fill="none"
+    height="24"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+    onClick={onClick}
+  >
+    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+  </svg>
+);

@@ -1,14 +1,14 @@
 import { config } from "@/config";
-import { User } from "@/types/custom/user";
+import { User, UserLogin } from "@/types/custom/user";
 import axios from "axios";
 
 export const signup = async (user: User) => {
   const { data } = await axios.post(`${config()}/users`, user);
   return data;
 };
-export const signin =  async (user: User):Promise<User> => {
+export const signin =  async (user: UserLogin):Promise<boolean> => {
    const users =  await getAll();
-   return users?.filter((currentUser:User) => user.email === currentUser.email && currentUser.password === user.password)
+   return users?.some((currentUser:User) => user.email === currentUser.email && currentUser.password === user.password)
 
 };
 

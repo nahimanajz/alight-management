@@ -1,5 +1,5 @@
 "use client";
-type IProp = {
+export type FieldProps = {
   label: string;
   placeholder?: string;
   type?: string;
@@ -16,7 +16,7 @@ const TextInput = ({
   svg,
   register,
   errors,
-}: IProp) => {
+}: FieldProps) => {
    const  className = `w-full rounded-lg ${errors[name]?"border-rose-600": "border-stroke"} border  bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none `
   
    return (
