@@ -45,7 +45,6 @@ const DropdownUser = () => {
     if (!user) {
       router.push("/auth/signin");
     }
-    console.log(user);
     setUser(user);
   }, []);
 

@@ -1,25 +1,31 @@
 "use client";
-import TextArea from "@/components/FormElements/TextArea";
+
 import TextInput from "@/components/FormElements/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Candidate, CandidateSchema } from "@/types/custom/candidate";
+import { Candidate, CandidateSchema, Feedback } from "@/types/custom/candidate";
 import { create, update } from "@/app/services/candidate";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { useRouter } from"next/navigation"
+import { useRouter } from "next/navigation";
+
+
+export type IFormProps = {
+  isEditing?: boolean;
+  candidate?: Candidate;
+  feedback?: Feedback;
+  title: string;
+  message: string;
+};
 
 export default function Form({
   isEditing = false,
   candidate,
   title,
   message,
-}: {
-  isEditing?: boolean;
-  candidate?: Candidate;
-  title: string;
-  message: string;
-}) {
-  const router = useRouter()
+  ...rest
+}: IFormProps) {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -29,17 +35,23 @@ export default function Form({
     resolver: yupResolver(CandidateSchema),
     defaultValues: candidate,
   });
+
   const onSubmit: SubmitHandler<Candidate> = (data) => {
     if (isEditing) {
       update({ ...data, id: candidate?.id });
     } else {
-      create(data);
+      create({
+        ...data,
+        status: "pending",
+        createdAt: new Date(Date.now()).toLocaleDateString(),
+      });
     }
     toast.info(message);
     setTimeout(() => {
-      router.push("/candidates")
+      router.push("/candidates");
     }, 1000);
   };
+
 
   return (
     <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -48,56 +60,64 @@ export default function Form({
       </div>
       <div className="p-16">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <TextInput
-            label={"Full Names"}
-            name={"name"}
-            register={register}
-            errors={errors}
-            defaultValue={candidate?.name}
-          />
-          <TextInput
-            label={"Email"}
-            name={"email"}
-            register={register}
-            errors={errors}
-            defaultValue={candidate?.email}
-          />
-          <TextInput
-            label={"Phone"}
-            name={"phone"}
-            register={register}
-            errors={errors}
-            defaultValue={candidate?.phone}
-          />
-          <TextInput
-            label={"Address"}
-            name={"address"}
-            register={register}
-            errors={errors}
-            defaultValue={candidate?.address}
-          />
-          <TextInput
-            label={"City"}
-            name={"city"}
-            register={register}
-            errors={errors}
-            defaultValue={candidate?.city}
-          />
-          <TextInput
-            label={"Qualification"}
-            name={"qualification"}
-            register={register}
-            errors={errors}
-            defaultValue={candidate?.qualification}
-          />
-          <TextInput
-            label={"Job Preferences"}
-            name={"job_preferences"}
-            register={register}
-            errors={errors}
-            defaultValue={candidate?.job_preferences}
-          />
+     
+              <div className="flex w-full gap-12">
+                <TextInput
+                  label={"Full Names"}
+                  name={"name"}
+                  register={register}
+                  errors={errors}
+                  defaultValue={candidate?.name}
+                />
+                <TextInput
+                  label={"Email"}
+                  name={"email"}
+                  register={register}
+                  errors={errors}
+                  defaultValue={candidate?.email}
+                />
+              </div>
+              <div className="flex w-full gap-12">
+                <TextInput
+                  label={"Address"}
+                  name={"address"}
+                  register={register}
+                  errors={errors}
+                  defaultValue={candidate?.address}
+                />
+                <TextInput
+                  label={"City"}
+                  name={"city"}
+                  register={register}
+                  errors={errors}
+                  defaultValue={candidate?.city}
+                />
+              </div>
+              <div className="flex w-full gap-12">
+                <TextInput
+                  label={"Qualification"}
+                  name={"qualification"}
+                  register={register}
+                  errors={errors}
+                  defaultValue={candidate?.qualification}
+                />
+                <TextInput
+                  label={"Job Preferences"}
+                  name={"job_preferences"}
+                  register={register}
+                  errors={errors}
+                  defaultValue={candidate?.job_preferences}
+                />
+              </div>
 
+              <TextInput
+                label={"Phone"}
+                name={"phone"}
+                register={register}
+                errors={errors}
+                defaultValue={candidate?.phone}
+              /> 
+        
           <div className="mb-5">
             <input
               type="submit"

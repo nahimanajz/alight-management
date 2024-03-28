@@ -23,6 +23,7 @@ const TextArea: FC<FieldProps> = ({
         placeholder={placeholder ?? `Please enter ${label}`}
         className={clx}
         defaultValue={defaultValue}
+       
       >
       
       </textarea>

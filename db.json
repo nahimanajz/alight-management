@@ -85,13 +85,14 @@
     {
       "name": "Jz",
       "email": "test@example.com",
-      "phone": "1234567890",
-      "address": "123 Main St",
-      "city": "New York",
-      "password": "<Null>",
+      "phone": "2024-03-27",
+      "address": "123 Main Std",
+      "city": "",
       "qualification": "Software Engineering",
       "job_preferences": "Programming",
-      "id": "5214"
+      "id": "5214",
+      "feedback": "hello",
+      "status": "upcoming"
     },
     {
       "name": "Jz",
@@ -99,10 +100,11 @@
       "phone": "1234567890",
       "address": "123 Main St",
       "city": "New York",
-      "password": "<Null>",
       "qualification": "Software Engineering",
       "job_preferences": "Programming",
-      "id": "f091"
+      "id": "f091",
+      "feedback": "helllo",
+      "status": "pending"
     }
   ],
   "jobs": [

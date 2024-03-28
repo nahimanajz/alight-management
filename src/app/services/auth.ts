@@ -14,7 +14,6 @@ export const signin = async (user: UserLogin): Promise<boolean> => {
       user.email === currentUser.email &&
       currentUser.password === user.password,
   );
-  console.log(signedUser);
   localStorage.setItem("user", JSON.stringify(signedUser[0]));
   return signedUser ? true : false;
 };

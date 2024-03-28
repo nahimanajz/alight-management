@@ -8,6 +8,7 @@ export const JobSchema = yup.object({
 });
 
 export type Job = yup.InferType<typeof JobSchema> & {
-  id?:string
+  id?:string,
+  isOnboarded?:boolean,
 };
 

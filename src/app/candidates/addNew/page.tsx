@@ -1,7 +1,7 @@
 "use client";
 
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import Form from "@/components/job/Form";
+import Form from "@/components/candidate/Form";
 
 const Page = () => {
   return (

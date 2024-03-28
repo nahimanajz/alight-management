@@ -44,6 +44,7 @@ const SignIn: React.FC = () => {
           svg={<Icon.EnvelopeIcon />}
         />
         <TextInput
+        type="password"
           label="Password"
           name={"password"}
           register={register}

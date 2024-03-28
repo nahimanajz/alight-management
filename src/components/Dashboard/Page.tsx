@@ -10,77 +10,126 @@ import { getAll } from "@/app/services/auth";
 import { getAll as getCandidates } from "@/app/services/candidate";
 import { getAll as getJobs } from "@/app/services/jobs";
 import { User } from "@/types/custom/user";
+import ActionLink from "../common/ActionLink";
+import Image from "next/image";
+import CardActivity from "../CardActivity";
 
 type DashboardProps = {
   jobs: Job[];
   candidates: Candidate[];
   users: User[];
+  pendingCandidates: Candidate[];
 };
 const Page: React.FC = () => {
   const [data, setData] = useState<DashboardProps>();
+  const [activeTab, setActiveTab] = useState(1);
 
   const getData = async () => {
     const users = await getAll();
     const candidates = await getCandidates();
     const jobs = await getJobs();
-    setData({ ...data, users, candidates, jobs });
+    const pendingCandidates = candidates.filter(
+      (candidate) => candidate.status === "onboaring Task",
+    );
+    setData({ ...data, users, candidates, jobs, pendingCandidates });
+  };
+  const getTable = () => {
+    switch (activeTab) {
+      case 1:
+        return <Jobs data={data?.jobs.slice(0, 5)} />;
+      case 2:
+        return <Candidates data={data?.candidates.slice(0, 5)} />;
+      default:
+        return <Candidates data={data?.pendingCandidates.slice(0, 5)} />;
+    }
   };
   useEffect(() => {
     getData();
   }, []);
+
+  const activeTabClx =
+    "text-[#071C50] dark:text-white text-base font-semibold leading-[24px] border-b-[2px] border-b-[#F7AC25] border-b-w-[32px] pb-2";
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-        <CardDataStats title="Total users" total={`${data?.users?.length}`} rate="0.43%" levelUp>
-          <svg
-            className="fill-primary dark:fill-white"
-            width="22"
-            height="16"
-            viewBox="0 0 22 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      <div className="flex justify-between">
+        <span className="text-[22px] font-semibold leading-[33px] text-[#071C50] dark:text-white">
+          Overview
+        </span>
+        <span className="flex space-x-8">
+          <ActionLink targetPage="/candidates/addNew" label="Add Candidate" />
+          <ActionLink targetPage="/jobs/addNew" label="Add Job" />
+        </span>
+      </div>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5 mt-6">
+        <CardActivity
+          count={33}
+          title={"Interview Scheduled"}
+          imgUrl={"/images/interview.svg"}
+        />
+        <CardActivity
+          count={2}
+          title={"Interview Feedback Pending"}
+          imgUrl={"/images/feedback.svg"}
+        />
+        <CardActivity
+          count={44}
+          title={"Approval pending"}
+          imgUrl={"/images/approval.svg"}
+        />
+        <CardActivity
+          count={13}
+          title={"Offer Acceptance Pending"}
+          imgUrl={"/images/acceptance.svg"}
+        />
+
+        <CardActivity
+          count={17}
+          title={"Documentations Pending"}
+          imgUrl={"/images/documentation.svg"}
+        />
+        <CardActivity
+          count={3}
+          title={"Training Pending"}
+          imgUrl={"/images/training.svg"}
+        />
+        <CardActivity
+          count={5}
+          title={"Supervisor Allocation Pending"}
+          imgUrl={"/images/supervision.svg"}
+        />
+        <CardActivity
+          count={56}
+          title={"Project Allocation Pending"}
+          imgUrl={"/images/project.svg"}
+        />
+      </div>
+      <div className="mt-12 flex flex-col justify-start gap-4">
+        <span className="text-[22px] font-semibold leading-[33px] text-[#333] dark:text-white">
+          Require Attention
+        </span>
+        <div className="text flex gap-8">
+          <span
+            className={`cursor-pointer ${activeTab === 1 && activeTabClx}`}
+            onClick={() => setActiveTab(1)}
           >
-            <path
-              d="M11 15.1156C4.19376 15.1156 0.825012 8.61876 0.687512 8.34376C0.584387 8.13751 0.584387 7.86251 0.687512 7.65626C0.825012 7.38126 4.19376 0.918762 11 0.918762C17.8063 0.918762 21.175 7.38126 21.3125 7.65626C21.4156 7.86251 21.4156 8.13751 21.3125 8.34376C21.175 8.61876 17.8063 15.1156 11 15.1156ZM2.26876 8.00001C3.02501 9.27189 5.98126 13.5688 11 13.5688C16.0188 13.5688 18.975 9.27189 19.7313 8.00001C18.975 6.72814 16.0188 2.43126 11 2.43126C5.98126 2.43126 3.02501 6.72814 2.26876 8.00001Z"
-              fill=""
-            />
-            <path
-              d="M11 10.9219C9.38438 10.9219 8.07812 9.61562 8.07812 8C8.07812 6.38438 9.38438 5.07812 11 5.07812C12.6156 5.07812 13.9219 6.38438 13.9219 8C13.9219 9.61562 12.6156 10.9219 11 10.9219ZM11 6.625C10.2437 6.625 9.625 7.24375 9.625 8C9.625 8.75625 10.2437 9.375 11 9.375C11.7563 9.375 12.375 8.75625 12.375 8C12.375 7.24375 11.7563 6.625 11 6.625Z"
-              fill=""
-            />
-          </svg>
-        </CardDataStats>
-        <CardDataStats
-          title="Total Candidates"
-          total={`${data?.candidates?.length}`}
-          rate="0.43%"
-          levelUp
-        >
-          <svg
-            className="fill-primary dark:fill-white"
-            width="22"
-            height="16"
-            viewBox="0 0 22 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            Jobs
+          </span>
+          <span
+            className={`cursor-pointer ${activeTab === 2 && activeTabClx}`}
+            onClick={() => setActiveTab(2)}
           >
-            <path
-              d="M11 15.1156C4.19376 15.1156 0.825012 8.61876 0.687512 8.34376C0.584387 8.13751 0.584387 7.86251 0.687512 7.65626C0.825012 7.38126 4.19376 0.918762 11 0.918762C17.8063 0.918762 21.175 7.38126 21.3125 7.65626C21.4156 7.86251 21.4156 8.13751 21.3125 8.34376C21.175 8.61876 17.8063 15.1156 11 15.1156ZM2.26876 8.00001C3.02501 9.27189 5.98126 13.5688 11 13.5688C16.0188 13.5688 18.975 9.27189 19.7313 8.00001C18.975 6.72814 16.0188 2.43126 11 2.43126C5.98126 2.43126 3.02501 6.72814 2.26876 8.00001Z"
-              fill=""
-            />
-            <path
-              d="M11 10.9219C9.38438 10.9219 8.07812 9.61562 8.07812 8C8.07812 6.38438 9.38438 5.07812 11 5.07812C12.6156 5.07812 13.9219 6.38438 13.9219 8C13.9219 9.61562 12.6156 10.9219 11 10.9219ZM11 6.625C10.2437 6.625 9.625 7.24375 9.625 8C9.625 8.75625 10.2437 9.375 11 9.375C11.7563 9.375 12.375 8.75625 12.375 8C12.375 7.24375 11.7563 6.625 11 6.625Z"
-              fill=""
-            />
-          </svg>
-        </CardDataStats>
-        <CardDataStats title="Total Jobs"  total={`${data?.jobs?.length}`} rate="0.4%" levelDown>
-          <Icon.PersonIcon />
-        </CardDataStats>
+            Candidates
+          </span>
+          <span
+            className={`cursor-pointer ${activeTab === 3 && activeTabClx}`}
+            onClick={() => setActiveTab(3)}
+          >
+            Onboarding
+          </span>
+        </div>
       </div>
       <div className="mt-12 flex flex-col justify-between gap-8">
-        <Jobs data={data?.jobs.slice(0, 5)} />
-        <Candidates data={data?.candidates.slice(0, 5)} />
+        {getTable()}
       </div>
     </>
   );

@@ -48,6 +48,9 @@ const Candidates: FC<IProps> = ({ data }) => {
           <p className="font-medium">Job preference</p>
         </div>
         <div className="col-span-1 flex items-center">
+          <p className="font-medium">Status</p>
+        </div>
+        <div className="col-span-1 flex items-center">
           <p className="font-medium">Actions</p>
         </div>
       </div>
@@ -83,10 +86,13 @@ const Candidates: FC<IProps> = ({ data }) => {
           <div className="col-span-1 flex items-center">
             <p className="text-sm text-meta-3">{candidate.job_preferences}</p>
           </div>
+          <div className="col-span-1 flex items-center">
+            <p className="text-sm text-meta-3">{candidate.status ?? "pending"}</p>
+          </div>
           <div className="col-span-1 flex items-center gap-4">
             <Icon.TrashIcon onClick={() =>handleDelete(candidate)} />
-           
-            <ActionLink targetPage={`candidates/${candidate?.id}`} label={"Edit"} />
+            <ActionLink targetPage={`candidates/${candidate?.id}`} label={"Edit"} className="bg-[#4B93E7] py-1 px-2" />
+            <ActionLink targetPage={`candidates/${candidate?.id}/feedback`} label={"Reply"} className="bg-[#F7AC25] py-1 px-2" />
 
           </div>
         </div>
